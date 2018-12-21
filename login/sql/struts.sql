@@ -1,6 +1,6 @@
 set names utf8;
 set foreign_key_checks = 0;
-drop database if exists logindb mitsuhashi;
+drop database if exists logindb_mitsuhashi;
 create database logindb_mitsuhashi;
 use logindb_mitsuhashi;
 
