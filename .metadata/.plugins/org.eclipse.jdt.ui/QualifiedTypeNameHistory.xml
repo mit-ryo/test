@@ -8,4 +8,5 @@
 <fullyQualifiedTypeName name="com.sun.corba.se.pept.transport.Connection"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="com.internousdev.login.util.DBConnector"/>
+<fullyQualifiedTypeName name="com.internousdev.webproj3.dto.HelloStrutsDTO"/>
 </qualifiedTypeNameHistroy>

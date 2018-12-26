@@ -1,0 +1,16 @@
+127.0.0.1 - - [26/Dec/2018:20:43:31 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [26/Dec/2018:20:43:34 +0900] "GET /WebProj3/ HTTP/1.1" 200 918
+0:0:0:0:0:0:0:1 - - [26/Dec/2018:20:44:44 +0900] "POST /WebProj3/WelcomeAction.action;jsessionid=B91493DF3EC5155C789A2CFFDD031A72 HTTP/1.1" 200 978
+0:0:0:0:0:0:0:1 - - [26/Dec/2018:20:44:52 +0900] "POST /WebProj3/LoginAction.action HTTP/1.1" 200 346
+0:0:0:0:0:0:0:1 - - [26/Dec/2018:20:44:59 +0900] "POST /WebProj3/LoginAction.action HTTP/1.1" 200 346
+127.0.0.1 - - [26/Dec/2018:20:55:23 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [26/Dec/2018:20:55:27 +0900] "GET /WebProj3/ HTTP/1.1" 200 2202
+0:0:0:0:0:0:0:1 - - [26/Dec/2018:20:55:30 +0900] "POST /WebProj3/InquiryAction.action HTTP/1.1" 200 1081
+0:0:0:0:0:0:0:1 - - [26/Dec/2018:20:55:34 +0900] "POST /WebProj3/InquiryCompleteAction.action HTTP/1.1" 200 476
+0:0:0:0:0:0:0:1 - - [26/Dec/2018:20:55:44 +0900] "GET /WebProj3/TestAction?username=taro&password=123 HTTP/1.1" 200 3437
+127.0.0.1 - - [26/Dec/2018:20:59:16 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [26/Dec/2018:20:59:18 +0900] "GET /WebProj3/ HTTP/1.1" 200 2236
+0:0:0:0:0:0:0:1 - - [26/Dec/2018:20:59:25 +0900] "GET /WebProj3/TestAction.action?username=taro&password=123 HTTP/1.1" 200 331
+0:0:0:0:0:0:0:1 - - [26/Dec/2018:20:59:29 +0900] "POST /WebProj3/WelcomeAction.action HTTP/1.1" 200 978
+0:0:0:0:0:0:0:1 - - [26/Dec/2018:20:59:33 +0900] "POST /WebProj3/LoginAction.action HTTP/1.1" 200 346
+0:0:0:0:0:0:0:1 - - [26/Dec/2018:20:59:46 +0900] "POST /WebProj3/LoginAction.action HTTP/1.1" 200 346
