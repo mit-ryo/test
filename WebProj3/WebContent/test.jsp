@@ -9,6 +9,8 @@
 </head>
 <body>
 <h1>以下の新規ユーザーが登録されました。</h1>
+
+
 <s:property value="username" />
 <br>
 <s:property value="password" />
