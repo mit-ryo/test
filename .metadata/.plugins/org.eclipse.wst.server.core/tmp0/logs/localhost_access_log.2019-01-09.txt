@@ -1,0 +1,7 @@
+127.0.0.1 - - [09/Jan/2019:21:51:40 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:21:51:44 +0900] "GET /template/ HTTP/1.1" 200 1498
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:21:51:46 +0900] "POST /template/HomeAction.action HTTP/1.1" 200 2009
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:21:51:51 +0900] "GET /template/UserCreateAction.action HTTP/1.1" 200 2147
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:21:51:57 +0900] "POST /template/UserCreateConfirmAction.action HTTP/1.1" 200 2053
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:21:51:58 +0900] "POST /template/UserCreateCompleteAction.action HTTP/1.1" 200 1394
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:21:52:00 +0900] "GET /template/HomeAction.action HTTP/1.1" 200 2009
