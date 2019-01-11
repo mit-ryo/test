@@ -66,7 +66,7 @@ clear:both;
 
 	<div id="main">
 		<div id="top">
-			<p>Home</p>
+			<p>Login</p>
 		</div>
 		<div>
 			<h3>商品を購入する際にはログインをお願いします。</h3>

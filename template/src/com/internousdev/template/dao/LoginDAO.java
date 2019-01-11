@@ -20,13 +20,14 @@ public class LoginDAO {
 			preparedStatement.setString(2, loginPassword);
 			ResultSet resultSet = preparedStatement.executeQuery();
 
-			while(resultSet.next()){
+			if(resultSet.next()){
 				loginDTO.setLoginId(resultSet.getString("login_id"));
 				loginDTO.setLoginPassword(resultSet.getString("login_pass"));
 				loginDTO.setUserName(resultSet.getString("user_name"));
-			}
-			if(!(resultSet.getString("login_id").equals(null))){
-				loginDTO.setLoginFlg(true);
+
+				if(!(resultSet.getString("login_id").equals(null))){
+					loginDTO.setLoginFlg(true);
+				}
 			}
 		}catch(Exception e){
 			e.printStackTrace();
