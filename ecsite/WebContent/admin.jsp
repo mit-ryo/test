@@ -74,11 +74,11 @@ clear:both;
 		</div>
 		<div id="text-center">
 			<p>商品</p>
-			<s:form action="itemCreateAction">
+			<s:form action="ItemCreateAction">
 				<s:submit value="新規登録"/>
 			</s:form>
 <!-- 			後に作成 ここから-->
-			<s:form action="itemListAction">
+			<s:form action="ItemListAction">
 				<s:submit value="一覧"/>
 			</s:form>
 			<p>ユーザー</p>
