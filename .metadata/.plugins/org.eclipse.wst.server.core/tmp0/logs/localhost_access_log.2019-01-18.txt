@@ -1,0 +1,13 @@
+127.0.0.1 - - [18/Jan/2019:20:14:25 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [18/Jan/2019:20:14:27 +0900] "GET /ecsite/ HTTP/1.1" 200 1583
+0:0:0:0:0:0:0:1 - - [18/Jan/2019:20:14:29 +0900] "POST /ecsite/HomeAction.action HTTP/1.1" 200 2176
+0:0:0:0:0:0:0:1 - - [18/Jan/2019:20:14:34 +0900] "POST /ecsite/LoginAction.action HTTP/1.1" 200 2694
+0:0:0:0:0:0:0:1 - - [18/Jan/2019:20:14:36 +0900] "POST /ecsite/BuyItemAction.action HTTP/1.1" 200 2658
+0:0:0:0:0:0:0:1 - - [18/Jan/2019:20:14:37 +0900] "POST /ecsite/BuyItemConfirmAction HTTP/1.1" 200 1530
+0:0:0:0:0:0:0:1 - - [18/Jan/2019:20:14:39 +0900] "GET /ecsite/MyPageAction.action HTTP/1.1" 200 2148
+127.0.0.1 - - [18/Jan/2019:20:18:02 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [18/Jan/2019:20:18:04 +0900] "GET /ecsite/ HTTP/1.1" 200 1682
+0:0:0:0:0:0:0:1 - - [18/Jan/2019:20:18:05 +0900] "POST /ecsite/HomeAction.action HTTP/1.1" 200 2694
+0:0:0:0:0:0:0:1 - - [18/Jan/2019:20:18:06 +0900] "POST /ecsite/BuyItemAction.action HTTP/1.1" 200 2658
+0:0:0:0:0:0:0:1 - - [18/Jan/2019:20:18:07 +0900] "POST /ecsite/BuyItemConfirmAction HTTP/1.1" 200 1530
+0:0:0:0:0:0:0:1 - - [18/Jan/2019:20:18:08 +0900] "GET /ecsite/MyPageAction.action HTTP/1.1" 200 3541

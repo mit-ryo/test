@@ -57,7 +57,7 @@ background-color: black;
 clear:both;
 }
 </style>
-<script type="text/javasctipt">
+<script type="text/javascript">
 	function submitAction(url){
 		$('form').attr('action',url);
 		$('form').submit();
@@ -120,7 +120,7 @@ clear:both;
 							<input type="button" value="戻る" onclick="submitAction('HomeAction')"/>
 						</td>
 						<td>
-							<input type="button" value="完了" onclick="submitAction('BuyItemCompleteAction')"/>
+							<input type="button" value="完了" onclick="submitAction('BuyItemConfirmAction')"/>
 						</td>
 					</tr>
 				</table>

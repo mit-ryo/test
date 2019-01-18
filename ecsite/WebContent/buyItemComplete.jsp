@@ -73,6 +73,7 @@ clear:both;
 			<div>
 				<a href='<s:url action="MyPageAction" />'>
 				マイページ</a><span>から購入履歴の確認が可能です。</span>
+				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
 			</div>
 		</div>
 	</div>
