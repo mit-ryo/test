@@ -1,0 +1,57 @@
+package com.internousdev.ecsite.action;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ecsite.dao.ItemListDAO;
+import com.internousdev.ecsite.dto.ItemListDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ItemListAction extends ActionSupport implements SessionAware{
+
+	public Map<String, Object> session;
+	private ItemListDAO itemListDAO = new ItemListDAO();
+	private List<ItemListDTO> itemListDTOList = new ArrayList<ItemListDTO>();
+	private String message;
+
+	public String execute()throws SQLException{
+
+//		String item_transaction_id = session.get("id").toString();
+//
+		itemListDTOList = itemListDAO.getItemListInfo();
+
+		String result = SUCCESS;
+		return result;
+	}
+
+//	public String getDeleteFlg(){
+//		return deleteFlg;
+//	}
+
+
+	public Map<String, Object> getSession(){
+		return session;
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session){
+		this.session = session;
+	}
+
+	public List<ItemListDTO>getItemListDTOList(){
+		return this.itemListDTOList;
+	}
+
+	public String getMessage(){
+		return this.message;
+	}
+
+	public void setMessage(String message){
+		this.message = message;
+	}
+
+}

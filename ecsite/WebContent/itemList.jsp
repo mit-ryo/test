@@ -74,7 +74,7 @@ text-align: right;
 			<p>ItemList</p>
 		</div>
 		<div>
-			<s:if test="myPageList == null">
+			<s:if test="itemListDTOList == null">
 				<h3>商品はありません。</h3>
 			</s:if>
 			<s:elseif test="session.message == null">
@@ -84,23 +84,19 @@ text-align: right;
 						<th>商品名</th>
 						<th>値段</th>
 						<th>購入個数</th>
-						<th>支払い方法</th>
-						<th>購入日</th>
+						<th>登録日</th>
+						<th>更新日</th>
 					</tr>
-					<s:iterator value="itemList">
+					<s:iterator value="itemListDTOList">
 						<tr>
 							<td><s:property value="itemName" /></td>
-							<td><s:property value="totalPrice" /><span>円</span></td>
-							<td><s:property value="totalCount" /><span>個</span></td>
-							<td><s:property value="payment" /></td>
+							<td><s:property value="itemPrice" /><span>円</span></td>
+							<td><s:property value="itemStock" /><span>個</span></td>
 							<td><s:property value="insert_date" /></td>
+							<td><s:property value="update_date" /></td>
 						</tr>
 					</s:iterator>
 				</table>
-				<s:form action="MyPageAction">
-					<input type="hidden" name="deleteFlg" value="1">
-					<s:submit value="削除" method="delete" />
-				</s:form>
 			</s:elseif>
 			<s:if test="message != null">
 				<h3><s:property value="message" /></h3>

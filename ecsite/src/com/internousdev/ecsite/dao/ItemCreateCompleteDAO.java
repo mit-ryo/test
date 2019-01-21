@@ -23,7 +23,6 @@ public class ItemCreateCompleteDAO {
 			preparedStatement.setString(2, itemPrice);
 			preparedStatement.setString(3, itemStock);
 			preparedStatement.setString(4, dateUtil.getDate());
-
 			preparedStatement.execute();
 		}catch(Exception e){
 			e.printStackTrace();
