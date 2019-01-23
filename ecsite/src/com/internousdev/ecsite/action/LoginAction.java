@@ -11,7 +11,6 @@ import com.internousdev.ecsite.dto.LoginDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport implements SessionAware{
-
 	private String loginUserId;
 	private String loginPassword;
 	private Map<String, Object> session;
@@ -24,7 +23,11 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
 		session.put("loginUser", loginDTO);
 
-		if(((LoginDTO)session.get("loginUser")).getLoginFlg()){
+		if((((LoginDTO) session.get("loginUser")).getAdminFlg() != null)
+			&& (((LoginDTO) session.get("loginUser")).getAdminFlg().equals("1"))){
+			result = "admin";
+		}else if(((LoginDTO)session.get("loginUser")).getLoginFlg()){
+
 			result = SUCCESS;
 			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
 
@@ -36,6 +39,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		}
 		return result;
 	}
+
 
 	public String getLoginUserId(){
 		return loginUserId;

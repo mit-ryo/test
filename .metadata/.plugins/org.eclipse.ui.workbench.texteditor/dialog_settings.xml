@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="itemStock" key="selection"/>
+		<item value="ItemInfoDTO" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="ItemListDTO"/>
 			<item value="userName"/>
 			<item value="totalCount"/>
 			<item value="totalPrice"/>
@@ -15,9 +16,9 @@
 			<item value="loginUserPassword"/>
 			<item value="loginUserId"/>
 			<item value="UserName"/>
-			<item value="loginPassword"/>
 		</list>
 		<list key="replacehistory">
+			<item value="ItemInfoDTO"/>
 			<item value="itemStock"/>
 			<item value="itemPrice"/>
 			<item value="itemList"/>
