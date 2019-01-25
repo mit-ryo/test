@@ -41,6 +41,27 @@
 			<result name="success">itemCreateComplete.jsp</result>
 		</action>
 
+		<!-- ItemListDeleteConfirmAction -->
+		<action name="ItemListDeleteConfirmAction" class="com.internousdev.ecsite.action.ItemListDeleteConfirmAction" method="execute">
+			<result name="success">itemListDeleteConfirm.jsp</result>
+		</action>
+
+		<!-- ItemListDeleteCompleteAction -->
+		<action name="ItemListDeleteCompleteAction" class="com.internousdev.ecsite.action.ItemListDeleteCompleteAction" method="execute">
+			<result name="success">itemListDeleteComplete.jsp</result>
+		</action>
+
+		<!-- UserListDeleteConfirmAction -->
+		<action name="UserListDeleteConfirmAction" class="com.internousdev.ecsite.action.UserListDeleteConfirmAction" method="execute">
+			<result name="success">userListDeleteConfirm.jsp</result>
+			<result name="error">userList.jsp</result>
+		</action>
+
+		<!-- UserListDeleteCompleteAction -->
+		<action name="UserListDeleteCompleteAction" class="com.internousdev.ecsite.action.UserListDeleteCompleteAction" method="execute">
+			<result name="success">userListDeleteComplete.jsp</result>
+		</action>
+
 		<!-- GoHomeAction -->
 		<action name="GoHomeAction" class="com.internousdev.ecsite.action.GoHomeAction" method="execute">
 			<result name="success">home.jsp</result>
@@ -56,6 +77,7 @@
 		<action name="LoginAction" class="com.internousdev.ecsite.action.LoginAction" method="execute">
 			<result name="success">buyItem.jsp</result>
 			<result name="error">login.jsp</result>
+			<result name="admin">admin.jsp</result>
 		</action>
 
 		<!-- UserCreateAction -->
@@ -73,6 +95,7 @@
 		<!-- UserCreateCompleteAction -->
 		<action name="UserCreateCompleteAction" class="com.internousdev.ecsite.action.UserCreateCompleteAction" method="execute">
 			<result name="success">userCreateComplete.jsp</result>
+			<result name="error">userCreate.jsp</result>
 		</action>
 
 		<!-- BuyItemAction -->
@@ -84,13 +107,15 @@
 		<!-- BuyItemConfirmAction -->
 		<action name="BuyItemConfirmAction" class="com.internousdev.ecsite.action.BuyItemConfirmAction" method="execute">
 			<result name="success">buyItemComplete.jsp</result>
+			<result name="error">buyItem.jsp</result>
 			<result name="back">buyItem.jsp</result>
 		</action>
 
-		<!-- BuyItemCompleteAction -->
-<!-- 		<action name="BuyItemCompleteAction" class="com.internousdev.ecsite.action.BuyItemCompleteAction" method="execute"> -->
-<!-- 			<result name="success">home.jsp</result> -->
-<!-- 		</action> -->
+<!-- 		BuyItemCompleteAction -->
+		<action name="BuyItemCompleteAction" class="com.internousdev.ecsite.action.BuyItemCompleteAction" method="execute">
+			<result name="success">home.jsp</result>
+			<result name="error">buyItem.jsp</result>
+		</action>
 
 		<!-- MyPageAction -->
 		<action name="MyPageAction" class="com.internousdev.ecsite.action.MyPageAction" method="execute">

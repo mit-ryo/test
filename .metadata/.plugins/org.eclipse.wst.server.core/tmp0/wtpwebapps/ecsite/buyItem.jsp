@@ -68,6 +68,9 @@ clear:both;
 		<div id="top">
 			<p>BuyItem</p>
 		</div>
+		<s:if test="errorMessage != ''">
+				<s:property value="errorMessage" escape="false" />
+			</s:if>
 		<div>
 			<s:form action="BuyItemAction">
 				<table>
@@ -99,6 +102,8 @@ clear:both;
 								<option value="3">3</option>
 								<option value="4">4</option>
 								<option value="5">5</option>
+								<option value="50">50</option>
+								<option value="51">51</option>
 							</select>
 						</td>
 					</tr>

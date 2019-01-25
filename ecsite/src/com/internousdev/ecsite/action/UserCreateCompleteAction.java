@@ -14,13 +14,24 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 	private String userName;
 	private Map<String,Object> session;
 	UserCreateCompleteDAO userCreateCompleteDAO = new UserCreateCompleteDAO();
+	private String errorMessage;
 
 	public String execute()throws SQLException{
-		userCreateCompleteDAO.createUser(session.get("loginUserId").toString(),
-				session.get("loginPassword").toString(),
-				session.get("userName").toString());
-		String result = SUCCESS;
-		return result;
+
+		String result;
+
+		// ユーザーチェック
+		if(!userCreateCompleteDAO.checkUserId(session.get("loginUserId").toString())) {
+			userCreateCompleteDAO.createUser(session.get("loginUserId").toString(),
+					session.get("loginPassword").toString(),
+					session.get("userName").toString());
+			result = SUCCESS;
+			return result;
+		} else {
+			setErrorMessage("既に使われているユーザーIDです。");
+			result = ERROR;
+			return result;
+		}
 	}
 
 	public String getLoginUserId(){
@@ -54,6 +65,14 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 	@Override
 	public void setSession(Map<String, Object> session){
 		this.session = session;
+	}
+
+	public String getErrorMessage(){
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage){
+		this.errorMessage = errorMessage;
 	}
 
 

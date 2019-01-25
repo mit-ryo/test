@@ -1,0 +1,42 @@
+package com.internousdev.ecsite.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.interceptor.SessionAware;
+
+
+import java.util.Map;
+
+import com.internousdev.ecsite.dao.BuyItemCompleteDAO;
+
+public class BuyItemCompleteAction extends ActionSupport implements SessionAware{
+
+	private Map<String,Object> session;
+	private BuyItemCompleteDAO buyItemCompleteDAO = new BuyItemCompleteDAO();
+
+
+	public String execute(){
+
+		String result;
+
+		if(buyItemCompleteDAO.checkStock(session.get("buyItemName").toString(),
+				session.get("buyItemPrice").toString(),
+				session.get("count").toString())){
+			result = SUCCESS;
+		} else {
+			result = ERROR;
+		}
+
+		return result;
+	}
+
+	public Map<String, Object> getSession(){
+		return session;
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session){
+		this.session = session;
+	}
+
+
+}
