@@ -36,6 +36,8 @@ public class BuyItemCompleteDAO {
 		}finally{
 			connection.close();
 		}
+
+
 	}
 
 	public boolean checkStock(String id, String itemPrice, String itemCount)throws SQLException{
@@ -52,6 +54,7 @@ public class BuyItemCompleteDAO {
 
 			if(resultSet.next()){
 				if(Integer.parseInt(resultSet.getString("item_stock")) >= Integer.parseInt(itemCount)) {
+
 					result = true;
 				}else{
 					result = false;
@@ -62,5 +65,26 @@ public class BuyItemCompleteDAO {
 		}
 
 		return result;
+	}
+
+	public void reduceStock(String id, String itemCount)throws SQLException{
+		DBConnector dbConnector= new DBConnector();
+		Connection connection = dbConnector.getConnection();
+		int newStock;
+		String sql = "INSERT INTO item_info_transaction(id,total_coun)VALUES(?,?)";
+
+		try{
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			//intからStringに変換できない　やり方を次回確認する。
+				newStock = Integer.parseInt(getString("item_stock")) - Integer.parseInt(itemCount);
+				preparedStatement.setString(1, id);
+				preparedStatement.setString(2, Integer.toString(newStock));
+
+				preparedStatement.execute();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			connection.close();
+		}
 	}
 }

@@ -14,27 +14,17 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 	public Map<String, Object> session;
 	private BuyItemCompleteDAO buyItemCompleteDAO = new BuyItemCompleteDAO();
 
-	private String errorMessage;
-
 	public String execute()throws SQLException{
 		String result = SUCCESS;
-		if(buyItemCompleteDAO.checkStock(session.get("id").toString(),
+
+		buyItemCompleteDAO.reduceStock(session.get("id").toString(), session.get("count").toString());
+
+		buyItemCompleteDAO.buyItemInfo(
+				session.get("id").toString(),
+				session.get("login_user_id").toString(),
 				session.get("buyItem_price").toString(),
-				session.get("count").toString())){
-
-			buyItemCompleteDAO.buyItemInfo(
-					session.get("id").toString(),
-					session.get("login_user_id").toString(),
-					session.get("buyItem_price").toString(),
-					session.get("count").toString(),
-					session.get("pay").toString());
-
-		} else {
-			setErrorMessage("在庫が不足しています。");
-			result = ERROR;
-		}
-
-
+				session.get("count").toString(),
+				session.get("pay").toString());
 
 		return result;
 	}
@@ -46,13 +36,5 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 	@Override
 	public void setSession(Map<String, Object> session){
 		this.session = session;
-	}
-
-	public String getErrorMessage() {
-		return errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 }
