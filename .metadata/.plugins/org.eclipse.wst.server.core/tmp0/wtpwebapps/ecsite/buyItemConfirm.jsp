@@ -91,7 +91,7 @@ clear:both;
 							値段
 						</td>
 						<td>
-							<s:property value="session.buyItem_price" />
+							<s:property value="session.total_buyItem_price" />
 							<span>円</span>
 						</td>
 					</tr>

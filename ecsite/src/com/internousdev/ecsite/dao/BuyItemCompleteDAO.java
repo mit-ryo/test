@@ -13,12 +13,12 @@ public class BuyItemCompleteDAO {
 
 	private DateUtil dateUtil = new DateUtil();
 
-	public void buyItemInfo(String item_transaction_id, String user_master_id, String total_price, String total_count, String pay)throws SQLException{
+	public int buyItemInfo(String item_transaction_id, String user_master_id, String total_price, String total_count, String pay)throws SQLException{
 
 		DBConnector dbConnector= new DBConnector();
 		Connection connection = dbConnector.getConnection();
 		String sql = "INSERT INTO user_buy_item_transaction(item_transaction_id, total_price, total_count, user_master_id, pay, insert_date)VALUES(?,?,?,?,?,?)";
-
+		int count = 0;
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -29,13 +29,15 @@ public class BuyItemCompleteDAO {
 			preparedStatement.setString(5, pay);
 			preparedStatement.setString(6, dateUtil.getDate());
 
-			preparedStatement.execute();
+			count = preparedStatement.executeUpdate();
 
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
 			connection.close();
 		}
+
+		return count;
 
 
 	}
@@ -54,7 +56,6 @@ public class BuyItemCompleteDAO {
 
 			if(resultSet.next()){
 				if(Integer.parseInt(resultSet.getString("item_stock")) >= Integer.parseInt(itemCount)) {
-
 					result = true;
 				}else{
 					result = false;
@@ -63,28 +64,28 @@ public class BuyItemCompleteDAO {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-
 		return result;
 	}
 
-	public void reduceStock(String id, String itemCount)throws SQLException{
+	public int reduceStock(String id, int buyItemCount)throws SQLException{
 		DBConnector dbConnector= new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		int newStock;
-		String sql = "INSERT INTO item_info_transaction(id,total_coun)VALUES(?,?)";
+		String sql = "update item_info_transaction set item_stock = item_stock - ? where id = ?";
+		int count = 0;
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			//intからStringに変換できない　やり方を次回確認する。
-				newStock = Integer.parseInt(getString("item_stock")) - Integer.parseInt(itemCount);
-				preparedStatement.setString(1, id);
-				preparedStatement.setString(2, Integer.toString(newStock));
+			//SELECT
+			preparedStatement.setInt(1, buyItemCount);
+			preparedStatement.setString(2, id);
 
-				preparedStatement.execute();
+			count = preparedStatement.executeUpdate();
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
 			connection.close();
 		}
+		return count;
+
 	}
 }

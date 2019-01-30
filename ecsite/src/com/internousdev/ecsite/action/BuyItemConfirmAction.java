@@ -15,16 +15,25 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 	private BuyItemCompleteDAO buyItemCompleteDAO = new BuyItemCompleteDAO();
 
 	public String execute()throws SQLException{
-		String result = SUCCESS;
+		String result = ERROR;
 
-		buyItemCompleteDAO.reduceStock(session.get("id").toString(), session.get("count").toString());
+		int insertCount = 0;
+		int updateCount = 0;
 
-		buyItemCompleteDAO.buyItemInfo(
+		insertCount = buyItemCompleteDAO.buyItemInfo(
 				session.get("id").toString(),
 				session.get("login_user_id").toString(),
 				session.get("buyItem_price").toString(),
 				session.get("count").toString(),
 				session.get("pay").toString());
+
+		if (insertCount > 0) {
+			updateCount = buyItemCompleteDAO.reduceStock(session.get("id").toString(), Integer.parseInt(session.get("count").toString()));
+
+			if (updateCount > 0) {
+				result = SUCCESS;
+			}
+		}
 
 		return result;
 	}

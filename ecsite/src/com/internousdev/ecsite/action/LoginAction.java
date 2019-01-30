@@ -1,6 +1,8 @@
 package com.internousdev.ecsite.action;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -36,6 +38,12 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			session.put("id",buyItemDTO.getId());
 			session.put("buyItem_name",buyItemDTO.getItemName());
 			session.put("buyItem_price",buyItemDTO.getItemPrice());
+			session.put("buyItem_stock",buyItemDTO.getItemStock());
+			List<Integer> productCountList = new ArrayList<Integer>();
+			for(int i=1; i <= Integer.parseInt(buyItemDTO.getItemStock()); i++){
+				productCountList.add(i);
+			}
+			session.put("productCountList", productCountList);
 			return result;
 		}
 		return result;
