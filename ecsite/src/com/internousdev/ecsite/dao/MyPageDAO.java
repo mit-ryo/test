@@ -14,7 +14,7 @@ public class MyPageDAO {
 	private DBConnector dbConnector = new DBConnector();
 	private Connection connection = dbConnector.getConnection();
 
-	public ArrayList<MyPageDTO> getMyPageUserInfo(String item_transaction_id, String user_master_id)throws SQLException{
+	public ArrayList<MyPageDTO> getMyPageUserInfo(/*String item_transaction_id,*/ String user_master_id)throws SQLException{
 		ArrayList<MyPageDTO> myPageDTO = new ArrayList<MyPageDTO>();
 
 		String sql = "SELECT"
@@ -26,14 +26,14 @@ public class MyPageDAO {
 				+ "ON "
 				+ "ubit.item_transaction_id = iit.id "
 				+ "WHERE "
-				+ "ubit.item_transaction_id = ? AND ubit.user_master_id = ? "
+				+ /*"ubit.item_transaction_id = ? AND */"ubit.user_master_id = ? "
 				+ "ORDER BY "
 				+ "ubit.insert_date DESC";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, item_transaction_id);
-			preparedStatement.setString(2, user_master_id);
+			//preparedStatement.setString(1, item_transaction_id);
+			preparedStatement.setString(1, user_master_id);
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while(resultSet.next()){

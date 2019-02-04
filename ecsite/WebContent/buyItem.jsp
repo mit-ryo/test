@@ -30,6 +30,8 @@ text-align:center;
 margin:0 auto;
 }
 
+
+
 /* =====ID LAYOUT===== */
 #top{
 width:780px;
@@ -69,10 +71,10 @@ clear:both;
 			<p>BuyItem</p>
 		</div>
 		<s:if test="errorMessage != ''">
-				<s:property value="errorMessage" escape="false" />
-			</s:if>
+			<s:property value="errorMessage" escape="false" />
+		</s:if>
 		<div>
-			<s:form action="BuyItemAction">
+			<s:form action="BuyItemAction" theme="simple">
 				<table>
 					<tr>
 						<td>
@@ -96,7 +98,8 @@ clear:both;
 							<span>購入個数</span>
 						</td>
 						<td>
-							<s:select name="count" list="session.productCountList"/>個
+							<s:select name="count" list="session.productCountList" />
+							<span>個</span>
 						</td>
 					</tr>
 					<tr>

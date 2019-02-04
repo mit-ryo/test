@@ -68,18 +68,18 @@ clear:both;
 		<div id="top">
 			<p>ItemSelect</p>
 		</div>
-		<s:if test="itemInfoDTOList == null">
-			<h3>商品情報はありません。</h3>
-		</s:if>
-		<s:elseif test="message == null">
-<%-- 			<s:if test="errorMessage != ''"> --%>
-<%-- 				<s:property value="errorMessage" escape="false" /> --%>
-<%-- 			</s:if> --%>
+		<s:if test="message == null">
+			<s:if test="errorMessage != ''">
+				<s:property value="errorMessage" escape="false" />
+			</s:if>
 			<s:form action="ItemSelectAction">
 				<h3>希望する商品番号を入力してください。</h3>
 				<s:textfield name="selectItem"/>
 				<s:submit value="完了"/>
 			</s:form>
+<%-- 			<s:form action="ItemSelectAction"> --%>
+<%-- 				<s:select name="selectItem" list="session.itemNumberList"/>個 --%>
+<%-- 			</s:form> --%>
 			<h3>商品情報は以下になります。</h3>
 				<table border="1">
 					<tr>
@@ -101,7 +101,7 @@ clear:both;
 						</tr>
 					</s:iterator>
 				</table>
-			</s:elseif>
+			</s:if>
 			<div>
 				<p>前画面に戻る場合は
 					<a href='<s:url action="GoHomeAction" />'>こちら</a>

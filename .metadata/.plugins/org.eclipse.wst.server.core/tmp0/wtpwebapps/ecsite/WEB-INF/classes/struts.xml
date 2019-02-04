@@ -4,6 +4,7 @@
 "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<constant name="struts.devMode" value="true" />
+<!-- 	<constant name="struts.ui.theme" value="simple" /> -->
 <!-- 対象のpackageを設定 -->
 	<package name = "com.internousdev.ecsite.action" extends="struts-default">
 

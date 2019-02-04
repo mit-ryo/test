@@ -44,3 +44,4 @@ org.eclipse.debug.core.DebugException: file:/C:/Users/testuser/Desktop/workspace
 2019-02-04 17:23:54,986 [Framework stop] INFO  org.eclipse.jetty.server.session - Stopped scavenging
 2019-02-04 17:23:55,111 [Framework stop] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@1128f52c{/wse,null,UNAVAILABLE}
 2019-02-04 17:34:01,380 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-02-04 19:40:12,085 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.

@@ -16,6 +16,7 @@ public class ItemListDAO {
 	private Connection connection = dbConnector.getConnection();
 
 	public List<ItemInfoDTO> getItemListInfo()throws SQLException{
+		//int itemCount=0;
 		List<ItemInfoDTO> ItemInfoDTO = new ArrayList<ItemInfoDTO>();
 //ここを直す
 		String sql = "SELECT * FROM item_info_transaction ORDER BY id";
