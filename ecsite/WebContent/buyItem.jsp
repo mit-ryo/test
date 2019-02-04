@@ -97,15 +97,6 @@ clear:both;
 						</td>
 						<td>
 							<s:select name="count" list="session.productCountList"/>個
-<%-- 								<select name="count"> --%>
-<!-- 									<option value="1" selected="selected">1</option> -->
-<!-- 									<option value="2">2</option> -->
-<!-- 									<option value="3">3</option> -->
-<!-- 									<option value="4">4</option> -->
-<!-- 									<option value="5">5</option> -->
-<!-- 									<option value="50">50</option> -->
-<!-- 									<option value="51">51</option> -->
-<%-- 								</select> --%>
 						</td>
 					</tr>
 					<tr>

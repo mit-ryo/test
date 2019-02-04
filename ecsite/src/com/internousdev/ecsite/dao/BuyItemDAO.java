@@ -13,12 +13,14 @@ public class BuyItemDAO {
 	Connection connection = dbConnector.getConnection();
 	BuyItemDTO buyItemDTO = new BuyItemDTO();
 
-	public BuyItemDTO getBuyItemInfo(){
+	public BuyItemDTO getBuyItemInfo(String id){
 
-		String sql = "SELECT id,item_name,item_price, item_stock FROM item_info_transaction";
+		//String sql = "SELECT id,item_name,item_price, item_stock FROM item_info_transaction WHERE id = ?";
+		String sql = "SELECT id FROM item_info_transaction WHERE id = ?";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, id);
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			if(resultSet.next()){

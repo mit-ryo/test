@@ -68,40 +68,40 @@ clear:both;
 		<div id="top">
 			<p>ItemSelect</p>
 		</div>
-		<div>
-			<h3>希望する商品の番号を記入してください。</h3>
-			<s:form action="Item">
-				<s:textfield name="loginUserId"/>
-				<s:password name="loginPassword"/>
-				<s:submit value="ログイン"/>
-			</s:form>
-		</div>
 		<s:if test="itemInfoDTOList == null">
-					<h3>商品情報はありません。</h3>
-				</s:if>
-				<s:elseif test="message == null">
-					<h3>商品情報は以下になります。</h3>
-					<table border="1">
+			<h3>商品情報はありません。</h3>
+		</s:if>
+		<s:elseif test="message == null">
+<%-- 			<s:if test="errorMessage != ''"> --%>
+<%-- 				<s:property value="errorMessage" escape="false" /> --%>
+<%-- 			</s:if> --%>
+			<s:form action="ItemSelectAction">
+				<h3>希望する商品番号を入力してください。</h3>
+				<s:textfield name="selectItem"/>
+				<s:submit value="完了"/>
+			</s:form>
+			<h3>商品情報は以下になります。</h3>
+				<table border="1">
+					<tr>
+						<th>id</th>
+						<th>商品名</th>
+						<th>値段</th>
+						<th>在庫</th>
+						<th>登録日</th>
+						<th>更新日</th>
+					</tr>
+					<s:iterator value="itemInfoDTOList">
 						<tr>
-							<th>id</th>
-							<th>商品名</th>
-							<th>値段</th>
-							<th>在庫</th>
-							<th>登録日</th>
-							<th>更新日</th>
+							<td><s:property value="id" /></td>
+							<td><s:property value="itemName" /></td>
+							<td><s:property value="itemPrice" /><span>円</span></td>
+							<td><s:property value="itemStock" /><span>個</span></td>
+							<td><s:property value="insert_date" /></td>
+							<td><s:property value="update_date" /></td>
 						</tr>
-						<s:iterator value="itemInfoDTOList">
-							<tr>
-								<td><s:property value="id" /></td>
-								<td><s:property value="itemName" /></td>
-								<td><s:property value="itemPrice" /><span>円</span></td>
-								<td><s:property value="itemStock" /><span>個</span></td>
-								<td><s:property value="insert_date" /></td>
-								<td><s:property value="update_date" /></td>
-							</tr>
-						</s:iterator>
-					</table>
-				</s:elseif>
+					</s:iterator>
+				</table>
+			</s:elseif>
 			<div>
 				<p>前画面に戻る場合は
 					<a href='<s:url action="GoHomeAction" />'>こちら</a>
